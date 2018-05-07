@@ -1,6 +1,6 @@
 # THB-MailBot
 
-Codacy Project Certifcate: [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8a8c774d495c4e0284ac17344e7c097e)](https://www.codacy.com/app/strumswell/THB-MailBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=strumswell/THB-MailBot&amp;utm_campaign=Badge_Grade)
+Codacy Project Certifcate: [![Codacy Badge](https://api.codacy.com/project/badge/Grade/254606c35bef4c4d98762780a1a932d4)](https://www.codacy.com/app/strumswell/THB-MailBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=strumswell/THB-MailBot&amp;utm_campaign=Badge_Grade)
 
 ### General 
 
