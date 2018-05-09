@@ -90,14 +90,18 @@ public class Bot {
 			db.put("old", db.get("new"));
 			System.out.println(time+" [MailBot] New cancellations detected.");
 			return true;
+		//Cancellation hasn't changed
+		} else if (db.get("old").equalsIgnoreCase(db.get("new"))){
+			System.out.println(time + " [MailBot] No new cancellations detected.");
+			return false;
 		//No cancellations on website
 		} else if (db.get("new").equalsIgnoreCase("")) {
 			System.out.println(time+" [MailBot] No cancellations detected.");
 			return false;
 		} else {
-			System.out.println(time + "[MailBot] Unknown case.");
+			System.out.println(time + " [MailBot] Unknown case.");
 			return false;
-		}		
+		}
 	}
 
 	/**
