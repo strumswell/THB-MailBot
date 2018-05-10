@@ -4,7 +4,7 @@ Codacy Project Certifcate: [![Codacy Badge](https://api.codacy.com/project/badge
 
 ### General 
 
-Sends an Email containing cancelled lectures at the Technische Hochschule Brandenburg. Should be used together with the "screen" command are something like this. Standard checking interval is 6 hours. E-Mail only gets send if something changes on the website. 
+Sends an email containing cancelled lectures at the Technische Hochschule Brandenburg. Should be used together with the "screen" command or something like this. Standard checking interval is 6 hours. Email only gets send if something changes on the website. 
 
 ![mail](https://i.imgur.com/ek4JVz6.png)
 
