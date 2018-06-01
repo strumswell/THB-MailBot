@@ -54,12 +54,12 @@ public class Bot {
 					if (newInformationAvailable()) {				
 						String time = DateFormat.getInstance().format(System.currentTimeMillis());
 						Email email = EmailBuilder.startingBlank()
-								.from("TH-MailBot", "mail")
-								.to("Philipp", "mail")
+								.from("TH-MailBot", "mail@mail.com")
+								.to("Philipp", "mail@mail.com")
 								.withSubject("Ausfälle an der THB")
 								.withPlainText(db.get("new"))
 								.buildEmail();
-						MailerBuilder.withSMTPServer("smtp.gmail.com", 587, "mailWithout@gmail.com", "password")
+						MailerBuilder.withSMTPServer("smtp.gmail.com", 587, "mailWithout@gmail", "password")
 								.buildMailer()
 								.sendMail(email);
 						System.out.println(time+" [MailBot] Mail sent.");
@@ -85,6 +85,10 @@ public class Bot {
 			db.put("old", db.get("new"));
 			System.out.println(time+" [MailBot] Site data loaded.");
 			return false;
+		//No cancellations on website
+		} else if (db.get("new").equalsIgnoreCase("")) {
+			System.out.println(time+" [MailBot] No cancellations detected.");
+			return false;
 		//Data on website has changed
 		} else if (!db.get("old").equalsIgnoreCase(db.get("new"))) {
 			db.put("old", db.get("new"));
@@ -93,10 +97,6 @@ public class Bot {
 		//Cancellation hasn't changed
 		} else if (db.get("old").equalsIgnoreCase(db.get("new"))){
 			System.out.println(time + " [MailBot] No new cancellations detected.");
-			return false;
-		//No cancellations on website
-		} else if (db.get("new").equalsIgnoreCase("")) {
-			System.out.println(time+" [MailBot] No cancellations detected.");
 			return false;
 		} else {
 			System.out.println(time + " [MailBot] Unknown case.");
